@@ -2,6 +2,7 @@ version: '3.5'
 services:
   rmqnamesrv:
     image: foxiswho/rocketmq:server
+    restart: always
     container_name: rmqnamesrv
     ports:
       - 9876:9876
@@ -15,6 +16,7 @@ services:
 
   rmqbroker:
     image: foxiswho/rocketmq:broker
+    restart: always
     container_name: rmqbroker
     privileged: true
     ports:
@@ -38,6 +40,7 @@ services:
 
   rmqconsole:
     image: styletang/rocketmq-console-ng
+    restart: always
     container_name: rmqconsole
     ports:
       - 9090:8080
