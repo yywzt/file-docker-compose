@@ -6,8 +6,8 @@ services:
     ports:
       - 9876:9876
     volumes:
-      - ./data/logs:/opt/logs
-      - ./data/store:/opt/store
+      - /data/rocketmq/server/logs:/opt/logs
+      - /data/rocketmq/server/store:/opt/store
     networks:
       rmq:
         aliases:
@@ -21,9 +21,9 @@ services:
       - 10909:10909
       - 10911:10911
     volumes:
-      - ./data/logs:/opt/logs
-      - ./data/store:/opt/store
-      - ./data/brokerconf/broker.conf:/etc/rocketmq/broker.conf
+      - /data/rocketmq/server/logs:/opt/logs
+      - /data/rocketmq/server/store:/opt/store
+      - /data/rocketmq/server/brokerconf/broker.conf:/etc/rocketmq/broker.conf
     environment:
       NAMESRV_ADDR: "rmqnamesrv:9876"
       JAVA_OPTS: " -Duser.home=/opt"
