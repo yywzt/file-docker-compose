@@ -12,6 +12,6 @@ services:
       TZ: Asia/Shanghai
       LANG: en_US.UTF-8
     volumes:
-      - ./conf/redis.conf:/redis.conf:rw
+      - /data/redis/conf/redis.conf:/redis.conf:rw
       - /data/redis/data:/data:rw
     privileged: true
